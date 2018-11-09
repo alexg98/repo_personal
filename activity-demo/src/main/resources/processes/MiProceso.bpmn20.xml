@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions id="ejemploMiPrimerProceso" 
+  xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	typeLanguage="http://www.w3.org/2001/XMLSchema"
+	expressionLanguage="http://www.w3.org/1999/XPath" 
+	targetNamespace="http://www.activiti.org/bpmn2.0">
+	
+	<process id='miProceso' name="Mi primer proceso">
+	
+		<startEvent id='inicio' />
+		
+		<sequenceFlow id='flujo1' sourceRef='inicio' targetRef='tarea' />
+ 
+		<userTask id='tarea' name='Mi primera tarea' >
+		  <documentation>Descripcion tarea</documentation>
+		  <humanPerformer>
+		    <resourceAssignmentExpression>
+		      <formalExpression>victor</formalExpression>
+		    </resourceAssignmentExpression>
+		  </humanPerformer>
+		</userTask>
+		
+		<sequenceFlow id='flujo2' sourceRef='tarea' targetRef='fin' />
+		
+		<endEvent id='fin' />
+		
+	</process>
+ 
+</definitions>
